@@ -1,4 +1,4 @@
-export { Socket };
+export default Socket;
 declare function Socket(): void;
 declare class Socket {
   _state: number;
