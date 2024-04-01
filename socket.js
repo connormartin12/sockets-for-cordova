@@ -105,7 +105,8 @@ Socket.prototype.write = function (data, success, error) {
     return;
   }
 
-  var dataToWrite = data ? Socket._copyToArray(data) : data;
+  var dataToWrite =
+    data instanceof Uint8Array ? Socket._copyToArray(data) : data;
 
   cordova.exec(success, error, CORDOVA_SERVICE_NAME, "write", [
     this.socketKey,
